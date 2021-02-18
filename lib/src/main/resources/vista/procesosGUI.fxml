@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="1285.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.ProcesosGUIController">
+   <left>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="289.0" prefWidth="265.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="INACTIVOS">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblInactivos">
+              <columns>
+                <TableColumn fx:id="tblColInactivosNombre" minWidth="50.0" prefWidth="278.0" text="Nombre" />
+              </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="4.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button minHeight="30.0" minWidth="90.0" mnemonicParsing="false" onAction="#crearProceso" prefHeight="30.0" prefWidth="100.0" text="CREAR">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button minHeight="30.0" minWidth="90.0" mnemonicParsing="false" onAction="#borrarProceso" prefHeight="30.0" prefWidth="100.0" text="BORRAR">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button minHeight="30.0" minWidth="90.0" mnemonicParsing="false" onAction="#prepararProceso" prefHeight="30.0" prefWidth="100.0" text="PREPARAR">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="25.0" top="25.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="265.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="SUSPENDIDOS">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblSuspendidos">
+              <columns>
+                <TableColumn fx:id="tblColSuspNom" minWidth="90.0" prefWidth="132.0" text="Nombre" />
+                  <TableColumn fx:id="tblColSuspInter" minWidth="90.0" prefWidth="132.0" text="Interactividad" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button minHeight="30.0" mnemonicParsing="false" onAction="#ejecutarInteractividad" prefHeight="30.0" prefWidth="100.0" text="EJECUTAR">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets right="25.0" top="25.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="CENTER" minHeight="100.0" minWidth="100.0" prefHeight="293.0" prefWidth="666.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="PREPARADOS">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblPreparados">
+              <columns>
+                <TableColumn fx:id="tblColPreparadosNom" minWidth="90.0" prefWidth="90.0" text="Nombre" />
+                <TableColumn minWidth="0.0" prefWidth="0.0" text="Quantum" />
+                  <TableColumn fx:id="tblColPreparadosPrio" minWidth="90.0" prefWidth="90.0" text="Prioridad" />
+                  <TableColumn fx:id="tblColPreparadosPid" minWidth="90.0" prefWidth="90.0" text="PID" />
+                  <TableColumn fx:id="tblColPreparadosEst" minWidth="90.0" prefWidth="90.0" text="Estado" />
+                  <TableColumn fx:id="tblColPreparadosTime" minWidth="120.0" prefWidth="120.0" text="Tiempo ejecución" />
+                  <TableColumn fx:id="tblColPreparadosQuantum" minWidth="90.0" prefWidth="90.0" text="Quantum" />
+                  <TableColumn fx:id="tblColPreparadosInter" minWidth="90.0" prefWidth="120.0" text="Interactividad" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button fx:id="btnGestionar" minHeight="30.0" mnemonicParsing="false" onAction="#gestionarProcesos" prefHeight="30.0" prefWidth="100.0" text="GESTIONAR">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="25.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="69.0" prefWidth="1380.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: indigo;" styleClass="lbltitulos" text="SIMPROC" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <VBox alignment="CENTER" prefWidth="1306.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="EJECUCIÓN">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblEjecucion" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="690.0">
+              <columns>
+                <TableColumn fx:id="tblColEjeNom" minWidth="90.0" prefWidth="90.0" text="Nombre" />
+                <TableColumn fx:id="tblColEjePrio" minWidth="90.0" prefWidth="90.0" text="Prioridad" />
+                  <TableColumn fx:id="tblColEjePid" minWidth="90.0" prefWidth="90.0" text="PID" />
+                  <TableColumn fx:id="tblColEjeEst" minWidth="90.0" prefWidth="90.0" text="Estado" />
+                  <TableColumn fx:id="tblColEjeTime" minWidth="100.0" prefWidth="120.0" text="Tiempo ejecución" />
+                  <TableColumn fx:id="tblColEjeQua" minWidth="90.0" prefWidth="90.0" text="Quantum" />
+                  <TableColumn fx:id="tblColEjeInter" minWidth="119.0" prefWidth="119.0" text="Interactividad" />
+              </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="80.0" spacing="10.0">
+               <children>
+                  <Label text="Ejecutando...">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="pBarEjecutando" minHeight="30.0" prefHeight="30.0" prefWidth="448.0" progress="0.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button minHeight="30.0" mnemonicParsing="false" onAction="#salirPrograma" prefHeight="30.0" prefWidth="100.0" text="SALIR">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="25.0" right="25.0" />
+               </padding>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="25.0" />
+         </BorderPane.margin>
+      </VBox>
+   </bottom>
+</BorderPane>

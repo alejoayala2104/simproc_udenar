@@ -1,0 +1,55 @@
+@font-face {
+	fx-font-family: 'Roboto Regular';
+    src: url(Roboto-Regular.ttf);
+}
+
+@font-face {
+	fx-font-family: 'Roboto Light';
+    src: url(Roboto-Light.ttf);
+}
+
+.root{
+	-fx-font-family: 'Roboto Regular';	
+}
+
+.background{
+	-fx-background-color:#FFFFFF ;	
+}
+
+.label{
+	-fx-font-family: 'Roboto Regular';	
+}
+
+.button{
+	-fx-font-family: 'Roboto Regular';
+	-fx-text-fill: white;
+	-fx-background-color:#401C72;
+	-fx-font-size:14;
+	-fx-background-radius: 6px;
+}
+
+.button:hover{	
+	-fx-background-color:#541BA4;	
+}
+
+.button:pressed{
+	-fx-background-color: #692D95;
+}
+
+.buttonEntrada{
+	-fx-font-family: 'Roboto Regular';
+	-fx-text-fill: white;
+	-fx-background-color:#401C72;
+	-fx-font-size:15;
+	-fx-background-radius: 6px;
+}
+
+.lblCrearProceso{
+	-fx-font-family: 'Roboto Regular';
+	-fx-font-size:18;
+}
+
+.lbltitulos{
+	-fx-font-family: 'Roboto Light';
+	-fx-font-size:25;
+}
