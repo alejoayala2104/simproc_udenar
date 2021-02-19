@@ -421,12 +421,12 @@ public class ProcesosGUIController {
     	//Configuración tabla inactivos
     	this.tblColInactivosNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
     	this.listaInactivos = FXCollections.observableArrayList();
-//    	this.listaInactivos = FXCollections.observableArrayList(new Proceso("p1", 0, 0),
-//    			new Proceso("p2", 0, 1),
-//    			new Proceso("p3", 0, 2),
-//    			new Proceso("p4", 0, 3),
-//    			new Proceso("p5", 0, 4),
-//    			new Proceso("p6", 0, 5));
+//    	this.listaInactivos = FXCollections.observableArrayList(new Proceso("p1", 0),
+//    			new Proceso("p2", 0),
+//    			new Proceso("p3", 0),
+//    			new Proceso("p4", 0),
+//    			new Proceso("p5", 0),
+//    			new Proceso("p6", 0));
     	this.tblInactivos.setItems(this.listaInactivos);  	
     	
     	//Configuración tabla preparados

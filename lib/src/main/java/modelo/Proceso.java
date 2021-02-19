@@ -81,7 +81,7 @@ public class Proceso {
 		this.pid.set(pid);
 		
 		//Valores aleatorios
-		this.prio.set(rd.nextInt(3)); //[0...3]
+		this.prio.set(rd.nextInt(4)); //[0...3]
 		if (this.tEjecucion.get() == 0) {this.tEjecucion.set((int)(Math.random()*10+1));} //Si no ha sigo asignado, es aleatorio.
 		
 		//Asignación de la interactividad en String para la muestra en tablas.
@@ -95,12 +95,12 @@ public class Proceso {
 		
 		//Asignación de la prioridad en String para muestra en tablas.
 		if (this.prio.get() == 0) {
-			this.tipoPrio.set("ALTA");
+			this.tipoPrio.set("BAJA");
 		}
 		else if(this.prio.get() == 1) {
 			this.tipoPrio.set("MEDIA");
 		}else {
-			this.tipoPrio.set("BAJA");
+			this.tipoPrio.set("ALTA");
 		}
 		
 		//Cálculo del Quantum
