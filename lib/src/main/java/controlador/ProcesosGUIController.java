@@ -204,7 +204,7 @@ public class ProcesosGUIController {
 				protected Void call() throws Exception {
 					
 					Platform.runLater(() -> ordenarPreparados());
-					Thread.sleep(5000);
+					Thread.sleep(20000);
 					okVistaOrden = true;
 					
 					
@@ -354,6 +354,9 @@ public class ProcesosGUIController {
 		    	}else if(this.listaPreparados.get(im).getQuantum()==this.listaPreparados.get(j).getQuantum() & this.listaPreparados.get(im).getPrio()<this.listaPreparados.get(j).getPrio()) {
 		    		Proceso aux = this.listaPreparados.set(im, this.listaPreparados.get(j));
 		    		this.listaPreparados.set(j,aux);
+		    	}else if(this.listaPreparados.get(im).getQuantum()==this.listaPreparados.get(j).getQuantum() & this.listaPreparados.get(im).getPrio()==this.listaPreparados.get(j).getPrio() & this.listaPreparados.get(im).getPid()>this.listaPreparados.get(j).getPid()) {
+		    		Proceso aux = this.listaPreparados.set(im, this.listaPreparados.get(j));
+		    		this.listaPreparados.set(j,aux);
 		    	}
 		    }
 		}
@@ -441,15 +444,15 @@ public class ProcesosGUIController {
     	this.listaPreparados = FXCollections.observableArrayList();
     	
     	//Prueba con una rata de quantum = 4
-//    	this.listaPreparados = FXCollections.observableArrayList(
-//    			new Proceso("p7", 5.0, 0, 0, "Si", 1.25),
-//    			new Proceso("p8", 5.0, 1, 2, "No", 1.25),
-//    			new Proceso("p9", 7.0, 2, 2, "Si", 1.75),
-//    			new Proceso("p10", 10.0, 3, 1, "No", 2.50),
-//    			new Proceso("p11", 7.0, 4, 2, "No", 1.75),
-//    			new Proceso("p12", 10.0, 5, 2, "No", 2.50),
-//    			new Proceso("p13", 15.0, 6, 2, "No", 3.75)
-//    			);
+    	this.listaPreparados = FXCollections.observableArrayList(
+    			new Proceso("p7", 5.0, 0, 0, "Si", 1.25),
+    			new Proceso("p8", 5.0, 1, 2, "No", 1.25),
+    			new Proceso("p9", 7.0, 2, 2, "Si", 1.75),
+    			new Proceso("p10", 10.0, 3, 1, "No", 2.50),
+    			new Proceso("p11", 7.0, 4, 2, "No", 1.75),
+    			new Proceso("p12", 10.0, 5, 2, "No", 2.50),
+    			new Proceso("p13", 15.0, 6, 2, "No", 3.75)
+    			);
 //    	this.listaPreparados = FXCollections.observableArrayList(    			
 //    			new Proceso("p10", 10.0, 3, "No", 2.0)    			
 //    			);    	
